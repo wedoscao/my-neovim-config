@@ -9,9 +9,9 @@ local ensure_packer = function()
 	return false
 end
 
-local is_genesis = ensure_packer()
+local packer_bootstrap = ensure_packer()
 
-require("packer").startup(function(use)
+return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
@@ -60,8 +60,7 @@ require("packer").startup(function(use)
 	use({ "nvimdev/dashboard-nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 	use("xiyaowong/transparent.nvim")
 	use("natecraddock/workspaces.nvim")
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
-
-if is_genesis then
-	vim.cmd("PackerSync")
-end
