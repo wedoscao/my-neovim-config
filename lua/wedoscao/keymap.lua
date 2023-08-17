@@ -22,7 +22,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Terminal
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
-vim.keymap.set("n", "<leader>`", vim.cmd.ToggleTerm)
 
 -- Colorscheme
 vim.keymap.set("n", "<leader>co", vim.cmd.Colorscheme)
