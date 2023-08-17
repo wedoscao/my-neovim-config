@@ -18,6 +18,7 @@ mason_lsp.setup({
 		"vimls",
 		"yamlls",
 		"bashls",
+		"emmet",
 	},
 })
 
