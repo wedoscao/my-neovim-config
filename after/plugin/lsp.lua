@@ -18,7 +18,7 @@ mason_lsp.setup({
 		"vimls",
 		"yamlls",
 		"bashls",
-		"emmet_ls",
+		"emmet_language_server",
 	},
 })
 
