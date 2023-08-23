@@ -3,7 +3,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 require("mason").setup()
 require("mason-null-ls").setup({
-	ensure_installed = { "stylua", "prettierd", "sql-formatter", "rustfmt", "beautysh", "cmakelang", "clang-format" },
+	ensure_installed = { "stylua", "prettierd", "sql-formatter", "rustfmt", "beautysh", "clang-format" },
 	automatic_installation = false,
 	handlers = {},
 })

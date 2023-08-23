@@ -19,7 +19,6 @@ mason_lsp.setup({
 		"yamlls",
 		"bashls",
 		"emmet_language_server",
-		"neocmake",
 		"clangd",
 	},
 })
