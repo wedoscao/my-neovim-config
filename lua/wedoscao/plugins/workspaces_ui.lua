@@ -157,7 +157,7 @@ local function add_workspaces()
 					end,
 					on_submit = function(path)
 						if path ~= "" then
-							workspaces.add(name, vim.cmd.expand(path))
+							workspaces.add(vim.fn.expand(path), name)
 						else
 							print("Invalid path")
 						end
