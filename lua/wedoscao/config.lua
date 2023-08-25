@@ -31,4 +31,4 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "0"
 
 vim.g.mapleader = " "
-vim.g.default_colorscheme = "kanagawa-wave"
+vim.g.default_colorscheme = "tokyonight-storm"

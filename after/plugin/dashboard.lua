@@ -6,7 +6,16 @@ dashboard.setup({
 			enable = true,
 		},
 		shortcut = {
-			{ desc = "󰊳 Sync", group = "@property", action = "PackerSync", key = "u" },
+			{
+				desc = "󰊳 Sync",
+				group = "@property",
+				action = function()
+					vim.cmd("PackerSync")
+					vim.cmd("MasonUpdate")
+					vim.cmd("TSUpdate")
+				end,
+				key = "u",
+			},
 			{
 				icon = " ",
 				icon_hl = "@variable",

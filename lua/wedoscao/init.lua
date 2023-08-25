@@ -5,8 +5,6 @@ require("wedoscao.plugins")
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.cmd("TransparentEnable")
-		vim.cmd("MasonUpdate")
-		vim.cmd("TSUpdate")
 		if vim.fn.argc() == 0 then
 			vim.cmd("Dashboard")
 		end
