@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		end
 
 		local workspaces = require("workspaces")
+		workspaces.sync_dirs()
 		local has_nvim = false
 		for _, workspace in ipairs(workspaces.get()) do
 			if workspace == "nvim" then
