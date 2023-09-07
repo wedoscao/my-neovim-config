@@ -1,4 +1,5 @@
 require("mason").setup()
+require("mason-update-all").setup()
 local lspconfig = require("lspconfig")
 require("neodev").setup({})
 local null_ls = require("null-ls")
