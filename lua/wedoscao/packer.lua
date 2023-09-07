@@ -36,18 +36,9 @@ packer.startup(function(use)
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use({
-		{
-			"williamboman/mason.nvim",
-			config = function()
-				require("mason").setup()
-			end,
-		},
-		{
-			"RubixDev/mason-update-all",
-			config = function()
-				require("mason-update-all").setup()
-			end,
-		},
+
+		"williamboman/mason.nvim",
+		"RubixDev/mason-update-all",
 		"jose-elias-alvarez/null-ls.nvim",
 		"jay-babu/mason-null-ls.nvim",
 		"williamboman/mason-lspconfig.nvim",
