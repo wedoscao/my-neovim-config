@@ -1,6 +1,6 @@
+require("wedoscao.packer")
 require("wedoscao.config")
 require("wedoscao.keymap")
-require("wedoscao.packer")
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
