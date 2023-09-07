@@ -31,5 +31,6 @@
         "/home/wedoscao/.local/share/nvim/site/pack/packer/start/workspaces.nvim/lua",
         "/home/wedoscao/.config/nvim/lua",
         "${3rd}/luv/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }

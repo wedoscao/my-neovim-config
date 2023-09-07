@@ -11,7 +11,7 @@ dashboard.setup({
 				group = "@property",
 				action = function()
 					vim.cmd("PackerSync")
-					vim.cmd("MasonUpdate")
+					vim.cmd("MasonUpdateAll")
 					vim.cmd("TSUpdate")
 				end,
 				key = "u",
