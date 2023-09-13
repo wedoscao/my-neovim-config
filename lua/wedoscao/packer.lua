@@ -64,6 +64,6 @@ packer.startup(function(use)
 	use("terryma/vim-multiple-cursors")
 
 	if packer_bootstrap then
-		require("packer").sync()
+		packer.sync()
 	end
 end)
