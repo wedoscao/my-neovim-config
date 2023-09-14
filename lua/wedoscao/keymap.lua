@@ -14,7 +14,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Tab multiple lines
 vim.keymap.set("v", "<tab>", function()
-    vim.cmd(">")
+	vim.cmd(">")
 end)
 
 -- greatest remap ever
@@ -37,10 +37,21 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- Lsp
 vim.keymap.set("n", "<leader>.", function()
-    vim.lsp.buf.code_action()
+	vim.lsp.buf.code_action()
 end)
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.hover()
+	vim.lsp.buf.hover()
+end)
+vim.keymap.set("n", "<leader>r", function()
+	local opts = {
+		focusable = false,
+		close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+		border = "rounded",
+		source = "always",
+		prefix = " ",
+		scope = "cursor",
+	}
+	vim.diagnostic.open_float(nil, opts)
 end)
 
 -- Fugitive
@@ -50,12 +61,12 @@ vim.keymap.set("n", "<leader>gt", vim.cmd.Git)
 local telescope_builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>pf", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>ps", function()
-    telescope_builtin.grep_string({ search = vim.fn.input("Grep > ") })
+	telescope_builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 vim.keymap.set("n", "<leader>pr", function()
-    telescope_builtin.diagnostics({
-        bufnr = 0,
-    })
+	telescope_builtin.diagnostics({
+		bufnr = 0,
+	})
 end)
 
 -- Workspaces
