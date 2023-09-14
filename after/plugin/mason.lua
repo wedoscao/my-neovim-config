@@ -33,9 +33,6 @@ mason_lsp.setup_handlers({
 	["rust_analyzer"] = function()
 		require("rust-tools").setup({
 			server = {
-				on_attach = function(_, bufnr)
-					open_float_diagnostic(bufnr)
-				end,
 				settings = {
 					["rust-analyzer"] = {
 						checkOnSave = true,
