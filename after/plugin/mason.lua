@@ -26,13 +26,41 @@ mason_lsp.setup({
     },
 })
 
+vim.diagnostic.config({
+    virtual_text = false,
+})
+
+local function open_float_diagnostic(bufnr)
+    vim.api.nvim_create_autocmd("CursorHold", {
+        buffer = bufnr,
+        callback = function()
+            local opts = {
+                focusable = false,
+                close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                border = "rounded",
+                source = "always",
+                prefix = " ",
+                scope = "cursor",
+            }
+            vim.diagnostic.open_float(nil, opts)
+        end,
+    })
+end
+
 mason_lsp.setup_handlers({
     function(server_name)
-        lspconfig[server_name].setup({})
+        lspconfig[server_name].setup({
+            on_attach = function(_, bufnr)
+                open_float_diagnostic(bufnr)
+            end,
+        })
     end,
     ["rust_analyzer"] = function()
         require("rust-tools").setup({
             server = {
+                on_attach = function(_, bufnr)
+                    open_float_diagnostic(bufnr)
+                end,
                 settings = {
                     ["rust-analyzer"] = {
                         checkOnSave = true,
