@@ -52,7 +52,6 @@ packer.startup(function(use)
 		"hrsh7th/cmp-vsnip",
 		"hrsh7th/vim-vsnip",
 	})
-	use({ "rafamadriz/friendly-snippets", requires = { "hrsh7th/vim-vsnip" } })
 	use("simrat39/rust-tools.nvim")
 	use("windwp/nvim-autopairs")
 	use("numToStr/Comment.nvim")
