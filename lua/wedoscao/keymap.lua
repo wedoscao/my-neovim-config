@@ -12,11 +12,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Tab multiple lines
-vim.keymap.set("v", "<tab>", function()
-	vim.cmd(">")
-end)
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>P", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
