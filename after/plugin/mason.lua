@@ -23,6 +23,7 @@ mason_lsp.setup({
 		"bashls",
 		"emmet_language_server",
 		"clangd",
+		"asm_lsp",
 	},
 })
 
@@ -48,7 +49,7 @@ mason_lsp.setup_handlers({
 })
 
 mason_null_ls.setup({
-	ensure_installed = { "stylua", "prettierd", "sql-formatter", "rustfmt", "beautysh", "clang-format" },
+	ensure_installed = { "stylua", "prettierd", "sql-formatter", "rustfmt", "beautysh", "clang-format", "asmfmt" },
 	automatic_installation = false,
 	handlers = {},
 })

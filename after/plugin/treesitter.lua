@@ -19,6 +19,7 @@ require("nvim-treesitter.configs").setup({
 		"gitignore",
 		"yaml",
 		"bash",
+		"make",
 	},
 
 	modules = {},
