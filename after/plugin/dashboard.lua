@@ -38,3 +38,7 @@ dashboard.setup({
 		mru = { limit = 18, lable = "" },
 	},
 })
+
+if vim.fn.argc() == 0 then
+	vim.cmd("Dashboard")
+end

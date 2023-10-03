@@ -278,3 +278,21 @@ vim.api.nvim_create_user_command("RemoveWorkspaces", remove_workspace, {})
 vim.api.nvim_create_user_command("AddWorkspaces", add_workspaces, {})
 vim.api.nvim_create_user_command("AddDirWorkspaces", add_dir_workspaces, {})
 vim.api.nvim_create_user_command("RemoveDirWorkspaces", remove_dir_workspaces, {})
+
+workspaces.sync_dirs()
+local has_nvim = false
+for _, workspace in ipairs(workspaces.get()) do
+	if workspace.name == "nvim" then
+		has_nvim = true
+	end
+end
+if not has_nvim then
+	workspaces.add(vim.fn.expand("~/.config/nvim"), "nvim")
+end
+workspaces.open("nvim")
+
+vim.keymap.set("n", "<leader>wa", vim.cmd.AddWorkspaces)
+vim.keymap.set("n", "<leader>wad", vim.cmd.AddDirWorkspaces)
+vim.keymap.set("n", "<leader>wo", vim.cmd.OpenWorkspaces)
+vim.keymap.set("n", "<leader>wr", vim.cmd.RemoveWorkspaces)
+vim.keymap.set("n", "<leader>wrd", vim.cmd.RemoveDirWorkspaces)
